@@ -6,8 +6,9 @@ bin-release/
 
 # Other files and folders
 .settings/
-.server/node_modules
-.app/WeatherApp/node_modules
+server/node_modules
+app/WeatherApp/node_modules
+
 
 # Executables
 *.swf
