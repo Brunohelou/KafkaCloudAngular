@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--Front end from the App tho display city weather info in real time-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Kafka Now</title>
+</head>
+<body>
+    <h1 style="text-align: center " >Welcome to the Weather App of {{data.name}}</h1>
+    <div style="margin-top: 70px; display: flex; text-align: center; align-content: center;">
+
+      <div style="display: inline-block; margin: auto; width: 30vw; text-align: center;">
+        <h2>Temperatura</h2>
+        <div style=" width: 100%; height: 100px; line-height: 100px; display: inline-block;">
+          <div style="display: inline-block; ">
+          <span style="font-size: 40px;">{{data.main.temp -273 | number:'2.1-2' }}°C</span>
+        </div>
+        <div style="display: inline-block; margin-left: 20px;">
+          <div style="font-size: 20px;">{{data.main.temp_max -273 | number:'2.1-2' }}°C</div>
+          <div style="font-size: 20px;margin-top: 5px;">{{data.main.temp_min -273 | number:'2.1-2' }}°C</div>
+        </div>
+        </div>
+    </div>
+
+    <div style="display: inline-block; margin: auto; width: 20vw; text-align: center;">
+      <h2>Humidity</h2>
+      <div style=" width: 100%; height: 100px; line-height: 100px;">
+        <span style="font-size: 40px;">{{data.main.humidity}}%</span></div>
+  </div>
+
+    <div style="display: inline-block; margin: auto; width: 20vw; text-align: center;">
+        <h2>Wind</h2>
+        <div style=" width: 100%; height: 100px; line-height: 100px;">
+          <span style="font-size: 40px;">{{data.wind.speed}}m/s</span></div>
+    </div>
+
+
+  
+
+</div>
+
+<div style="width: 20vw; text-align: center;">
+  <h2>History of Temp</h2>
+  <ul>
+    <li *ngFor="let data of chart">{{data.temp -273 | number:'2.1-2'}}</li>
+  </ul>
+</div>
+
+
+<div>
+  <div style="display: block">
+   
+  </div>
+</div>
+
+
+</body>
+</html>
